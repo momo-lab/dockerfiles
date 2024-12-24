@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  workspace:
+    build:
+      context: .
+      args:
+        USERNAME: $USERNAME
+        GROUPNAME: $GROUPNAME
+        HOST_UID: $HOST_UID
+        HOST_GID: $HOST_GID
+    tty: true
+    user: $USERNAME
+    volumes:
+      - ./home:/home/$USERNAME
